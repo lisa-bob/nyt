@@ -2,7 +2,7 @@
   <div id="background">
   <div id="app">
     <h1> Welcome </h1> 
-    <h3> to NY Times most viewed articles </h3> 
+    <p id="welcome"> to NY Times most viewed articles </p> 
 
     <div v-if="articles!=[]"> 
       <Article v-bind:articles="articles" v-bind:articleIndex="index"/>
@@ -34,28 +34,24 @@ export default {
     }
   },
   mounted() {
-    console.log("mounted"),
     axios.get("https://api.nytimes.com/svc/mostpopular/v2/viewed/7.json?api-key=pPAgGA1VOUKtKDeBbG7LYE7Yro5xKSJU")
       .then(response => {
         this.articles = response.data.results;
-        console.log(response.data.results);
       });
   },
   methods: {
     next() {
       this.index++;
-      console.log('cur index: ', this.index);
     },
     previous() {
       this.index--;
-      console.log('cur index: ', this.index);
     }
   }
 }
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css?family=Dawning+of+a+New+Day&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Dawning+of+a+New+Day|Bitter&display=swap");
 
 body {
   background-image: url(./assets/IMG_0803-1.png);
@@ -63,14 +59,15 @@ body {
 }
 
 h1 {
-  font-size: 4.6em;
+  font-size: 3em;
+  font-family: "Dawning of a New Day";
 }
 
-h3 {
-  margin-top: -1em;
-  font-family: "Dawning of a New Day";
-  font-size: 2em;
+#welcome {
+  font-family: "Bitter";
+  margin-top: -40px;
   font-weight: 100;
+  font-size: 12px;
 }
 
 #app {
@@ -104,7 +101,7 @@ button {
   height: 150px;
   border-radius: 100px;
   transition: 2s ease-out;
-  top: 50vh;
+  top: 70vh;
 }
 
 #prev {
