@@ -5,14 +5,11 @@
     <p id="welcome"> to NY Times most viewed articles </p> 
 
     <div v-if="articles!=[]"> 
-      <Article v-bind:articles="articles" v-bind:articleIndex="index"/>
+      <Article v-bind:articles="articles" v-bind:articleIndex="index" v-on:next="next()" v-on:previous="previous()"/>
     </div>
     <div v-else>
       <h6> Sorry, no articles fetched. </h6>
     </div>
-    
-    <button id="prev" @click="previous()"> prev </button>
-    <button id="next" @click="next()"> next </button>
   </div>
   </div>
 </template>
@@ -91,44 +88,12 @@ h1 {
   height: 100%;
 }
 
-button {
-  background-color: rgba(0, 0, 0, 0.3);
-  color: rgba(255, 255, 255, 0.7);
-  border-color: rgba(0, 0, 0, 0);
-  border-width: 1px;
-  margin: 10px;
-  width: 70px;
-  height: 70px;
-  border-radius: 50px;
-  transition: 2s ease-out;
-  bottom: 15px;
-  font-size: 10px;
-}
-
-#prev {
-  position: fixed;
-  text-align: right;
-  left: -40px;
-}
-
-#next {
-  position: fixed;
-  text-align: left;
-  right: -40px;
-}
-
-button:hover {
-  /*background: rgba(255, 255, 255, 0.3);
-  color: rgba(255, 255, 255, 1);*/
-  background: rgba(0, 0, 0, 0.3);
-  border-color: rgba(255, 255, 255, 0.4);
-  border-style: solid;
-  transition: 1s ease-in;
-  cursor: pointer;
-}
-
-@media screen and (max-height: 540px) {
-    button {
-    }
+@media screen and (min-width: 500px) {
+  h1 {
+    margin-top: 5vh;
+  }
+  #welcome {
+    margin-bottom: 5vh;
+  }
 }
 </style>
