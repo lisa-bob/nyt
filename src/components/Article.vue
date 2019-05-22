@@ -2,11 +2,18 @@
   <div class="article">
     <img :src="articles[articleIndex].media[0]['media-metadata'][2]['url']" >
     <div class="content">
-      <p>{{ articles[articleIndex].title }}</p>
-      <p> {{ articles[articleIndex].abstract }} </p>
-      <p> {{ articles[articleIndex].section }} </p>
-      <a :href="articles[articleIndex]['url']" target="_blanc"> read more </a>
+      <div>
+        <p id="section"> {{ articles[articleIndex].published_date }} </p>
+        <p id="section"> {{ articles[articleIndex].section }} </p>
+      </div>
+      <div class="text">
+        <p id="header">{{ articles[articleIndex].title }}</p>
+        <p id="description"> {{ articles[articleIndex].abstract }} </p>
+      </div>
     </div>
+    <button>
+      <a :href="articles[articleIndex]['url']" target="_blanc"> read more </a>
+    </button>
   </div>
 </template>
 
@@ -22,27 +29,52 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+@import url("https://fonts.googleapis.com/css?family=Dawning+of+a+New+Day|Bitter&display=swap");
+
+#description {
+  padding: 0 20px 0 20px;  
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+#header {
+  font-family: "Bitter";
+  padding: 0 20px 0 20px;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.text {
+  margin-right: 15px;
 }
 .content {
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 50vw;
-  height: 50vh;
-  box-shadow: 0px 0px 100px -50px rgb(160, 144, 144);
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 800px;
   color: white;
-  
+  margin: -5px;
+  padding: 20px;
+}
+img {
+  width: 100%;
+  margin: 0;
+}
+p {
+  font-size: 10px;
+  text-align: left;
+}
+#section {
+  color: rgba(255, 255, 255, 0.3);
+}
+a {
+  color: white;
+  text-decoration: none;
+  font-family: Bitter;
+}
+button {
+  position: fixed;
+  left: 50;
+  margin-left: -35px;
+  bottom: 20px;
+  border-color: white;
+  border-style: solid;
+  border-width: 0.5px;
 }
 </style>

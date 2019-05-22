@@ -59,6 +59,7 @@ body {
 }
 
 h1 {
+  margin-top: 0px;
   font-size: 3em;
   font-family: "Dawning of a New Day";
 }
@@ -91,36 +92,37 @@ h1 {
 }
 
 button {
-  background-color: transparent;
-  color: rgba(255, 255, 255, 0.7);;
-  border-style: solid;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0);
   border-width: 1px;
-  border-color: rgba(255, 255, 255, 0.4);
   margin: 10px;
-  width: 150px;
-  height: 150px;
-  border-radius: 100px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
   transition: 2s ease-out;
-  top: 70vh;
+  bottom: 20px;
+  font-size: 10px;
 }
 
 #prev {
   position: fixed;
   text-align: right;
-  left: -100px;
+  left: -40px;
 }
 
 #next {
   position: fixed;
   text-align: left;
-  right: -100px;
+  right: -40px;
 }
 
 button:hover {
   /*background: rgba(255, 255, 255, 0.3);
   color: rgba(255, 255, 255, 1);*/
   background: rgba(0, 0, 0, 0.3);
-  border-color: rgba(0, 0, 0, 0);
+  border-color: rgba(255, 255, 255, 0.4);
+  border-style: solid;
   transition: 1s ease-in;
   cursor: pointer;
 }
