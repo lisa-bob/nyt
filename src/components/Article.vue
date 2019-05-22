@@ -1,6 +1,8 @@
 <template>
   <div class="article">
-    <img :src="articles[articleIndex].media[0]['media-metadata'][2]['url']" >
+    <div class="crop">
+      <img :src="articles[articleIndex].media[0]['media-metadata'][2]['url']" >
+    </div>
     <div class="content">
       <div>
         <p id="section"> {{ articles[articleIndex].published_date }} </p>
@@ -52,10 +54,6 @@ export default {
   margin: -5px;
   padding: 20px;
 }
-img {
-  width: 100%;
-  margin: 0;
-}
 p {
   font-size: 10px;
   text-align: left;
@@ -76,5 +74,20 @@ button {
   border-color: white;
   border-style: solid;
   border-width: 0.5px;
+}
+.crop {
+    height: auto; 
+    overflow: hidden;
+}
+
+img {
+  width: 100vw;
+  object-fit: cover;
+}
+
+@media screen and (max-height: 540px) {
+    .crop {
+      height: 200px;
+    }
 }
 </style>

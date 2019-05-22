@@ -101,7 +101,7 @@ button {
   height: 70px;
   border-radius: 50px;
   transition: 2s ease-out;
-  bottom: 20px;
+  bottom: 15px;
   font-size: 10px;
 }
 
@@ -125,5 +125,10 @@ button:hover {
   border-style: solid;
   transition: 1s ease-in;
   cursor: pointer;
+}
+
+@media screen and (max-height: 540px) {
+    button {
+    }
 }
 </style>
