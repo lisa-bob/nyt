@@ -56,7 +56,7 @@ body {
 }
 
 h1 {
-  margin-top: 0px;
+  margin-top: 10px;
   font-size: 3em;
   font-family: "Dawning of a New Day";
 }
@@ -66,6 +66,7 @@ h1 {
   margin-top: -40px;
   font-weight: 100;
   font-size: 12px;
+  margin-bottom: 10px;
 }
 
 #app {
