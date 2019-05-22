@@ -38,10 +38,18 @@ export default {
   },
   methods: {
     next() {
-      this.index++;
+      if (this.index == this.articles.length-1) {
+        this.index = 0;
+      } else {
+        this.index++;
+      }
     },
     previous() {
-      this.index--;
+      if (this.index == 0) {
+        this.index = this.articles.length-1;
+      } else {
+        this.index--;
+      }
     }
   }
 }
